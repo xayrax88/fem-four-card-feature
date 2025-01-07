@@ -1,7 +1,75 @@
+/*
+Style Guide
+## Layout
+The designs were created to the following widths:
+- Mobile: 375px
+- Desktop: 1440px
+
+> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
+
+### Primary
+- Red: hsl(0, 78%, 62%)
+- Cyan: hsl(180, 62%, 55%)
+- Orange: hsl(34, 97%, 64%)
+- Blue: hsl(212, 86%, 64%)
+
+### Neutral
+- Very Dark Blue: hsl(234, 12%, 34%)
+- Grayish Blue: hsl(229, 6%, 66%)
+- Very Light Gray: hsl(0, 0%, 98%)
+
+## Typography
+### Body Copy
+- Font size: 15px
+
+### Fonts
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 200, 400, 600
+*/
+
+/* Variable styles */
+:root {
+    /* Primary Colors*/
+    --Red-color: hsl(0, 78%, 62%);
+    --Cyan-color: hsl(180, 62%, 55%);
+    --Orange-color: hsl(34, 97%, 64%);
+    --Blue-color: hsl(212, 86%, 64%)
+
+    /* Neutral Colors */
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --White: hsl(0, 0%, 100%);
+    --Attribution-color: hsl(228, 45%, 44%);
+
+    --font-weight-200: 200;
+    --font-weight-400: 400;
+    --font-weight-600: 600;
+  }
+  
+  /* General global styling & setup */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    font-family: "Poppins", sans-serif;
+    /* font-weight: <weight>; */
+    font-style: normal;
+    font-size: 15px;
+}
+
+  footer {
+    color: (--White);
+    position: relative;
+    padding-bottom: 5px;
+  }
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--Attribution-color);
 }
