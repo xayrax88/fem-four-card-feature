@@ -26,50 +26,146 @@ The designs were created to the following widths:
 - Family: [Poppins](https://fonts.google.com/specimen/Poppins)
 - Weights: 200, 400, 600
 */
-
-/* Variable styles */
 :root {
-    /* Primary Colors*/
-    --Red-color: hsl(0, 78%, 62%);
-    --Cyan-color: hsl(180, 62%, 55%);
-    --Orange-color: hsl(34, 97%, 64%);
-    --Blue-color: hsl(212, 86%, 64%)
-
-    /* Neutral Colors */
-    --Very-Dark-Blue: hsl(234, 12%, 34%);
-    --Grayish-Blue: hsl(229, 6%, 66%);
-    --Very-Light-Gray: hsl(0, 0%, 98%);
-    --White: hsl(0, 0%, 100%);
-    --Attribution-color: hsl(228, 45%, 44%);
-
-    --font-weight-200: 200;
-    --font-weight-400: 400;
-    --font-weight-600: 600;
-  }
-  
-  /* General global styling & setup */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
+  --Red-color: hsl(0, 78%, 62%);
+  --Cyan-color: hsl(180, 62%, 55%);
+  --Orange-color: hsl(34, 97%, 64%);
+  --Blue-color: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Dark-blue: #4d4f62;
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Attribution-color: hsl(228, 45%, 44%);
+  --font-weight-200: 200; /*extra light*/
+  --font-weight-400: 400; /*normal*/
+  --font-weight-600: 600; /*semi-bold*/
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
-    font-family: "Poppins", sans-serif;
-    /* font-weight: <weight>; */
-    font-style: normal;
-    font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  background: var(--Very-Light-Gray);
+  color: var(--Very-Dark-Blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-  footer {
-    color: (--White);
-    position: relative;
-    padding-bottom: 5px;
+/* .parent-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
+    gap: 1rem;
+    padding: 1em;
+} */
+
+/* Responsive design for smaller screens */
+@media (max-width: 375px) and (max-height: 1360px) {
+  body {
+    flex-direction: column;
+    justify-content: flex-start;
   }
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: var(--Attribution-color);
+  svg {
+    height: 57px;
+    width: 57px;
+  }
+
+  .parent-container {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(311px, 1fr)); */
+    gap: 1rem;
+    padding: 1em;
+    grid-template-columns: 1fr;
+  }
+
+  .powered-by-tech {
+    width: 311px;
+    border-radius: 0.5em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .powered-by-tech {
+    border: 1px solid red;
+  }
+
+  .powered-by-tech h1:first-of-type {
+    font-weight: var(--font-weight-200);
+    font-size: 24px;
+  }
+
+  .powered-by-tech h1:last-of-type {
+    font-weight: var(--font-weight-600);
+    font-size: 24px;
+    margin-block-end: 0.5em;
+  }
+
+  .powered-by-tech p,
+  .supervisor p {
+    font-weight: var(--font-weight-200); /*extra light font*/
+  }
+
+  .supervisor {
+    border-top: 3px solid var(--Cyan-color);
+    background: var(--White);
+  }
+
+  .powered-by-tech,
+  .supervisor {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .powered-by-tech h1:first-of-type,
+  .powered-by-tech h1:last-of-type,
+  .supervisor h1 {
+    font-size: 20px;
+  }
+
+  .powered-by-tech p {
+    line-height: 20px;
+  }
+
+  .supervisor h1 {
+    margin-bottom: 0.5em;
+  }
+
+  .supervisor p {
+    font-size: 13px;
+  }
+
+  .supervisor {
+    height: 222px;
+    width: 311px;
+    position: relative;
+    border-top: 3px solid var(--Cyan-color);
+    background: var(--White);
+    border-radius: 0.5em;
+    padding: 1em;
+    padding-bottom: 4em;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow: visible;
+  }
+
+  .supervisor svg {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    height: 57px;
+    width: 57px;
+    pointer-events: none;
+    overflow: visible;
+  }
 }
