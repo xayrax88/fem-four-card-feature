@@ -110,45 +110,57 @@ body {
     margin-block-end: 0.5em;
   }
 
-  .powered-by-tech p,
-  .supervisor p {
-    font-weight: var(--font-weight-200); /*extra light font*/
-  }
-
-  .supervisor {
-    border-top: 3px solid var(--Cyan-color);
-    background: var(--White);
-  }
-
-  .powered-by-tech,
-  .supervisor {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .powered-by-tech h1:first-of-type,
-  .powered-by-tech h1:last-of-type,
-  .supervisor h1 {
-    font-size: 20px;
-  }
-
   .powered-by-tech p {
     line-height: 20px;
   }
 
-  .supervisor h1 {
+  .powered-by-tech h1:first-of-type,
+  .powered-by-tech h1:last-of-type,
+  .supervisor h1,
+  .team-builder h1,
+  .karma h1,
+  .calculator h1 {
+    font-size: 20px;
+  }
+
+  .powered-by-tech p,
+  .supervisor p,
+  .team-builder p,
+  .karma p,
+  .calculator p {
+    font-weight: var(--font-weight-200); /*extra light font*/
+  }
+
+  .powered-by-tech,
+  .supervisor,
+  .team-builder,
+  .karma,
+  .calculator {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .supervisor h1,
+  .team-builder h1,
+  .karma h1,
+  .calculator h1 {
     margin-bottom: 0.5em;
   }
 
-  .supervisor p {
+  .supervisor p,
+  .team-builder p,
+  .karma p,
+  .calculator p {
     font-size: 13px;
   }
 
-  .supervisor {
+  .supervisor,
+  .team-builder,
+  .karma,
+  .calculator {
     height: 222px;
     width: 311px;
     position: relative;
-    border-top: 3px solid var(--Cyan-color);
     background: var(--White);
     border-radius: 0.5em;
     padding: 1em;
@@ -159,7 +171,26 @@ body {
     overflow: visible;
   }
 
-  .supervisor svg {
+  .supervisor {
+    border-top: 3px solid var(--Cyan-color);
+  }
+
+  .team-builder {
+    border-top: 3px solid var(--Red-color);
+  }
+
+  .karma {
+    border-top: 3px solid var(--Orange-color);
+  }
+
+  .calculator {
+    border-top: 3px solid var(--Blue-color);
+  }
+
+  .supervisor svg,
+  .team-builder svg,
+  .karma svg,
+  .calculator svg {
     position: absolute;
     bottom: 2em;
     right: 2em;
