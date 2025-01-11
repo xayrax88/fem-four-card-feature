@@ -41,6 +41,8 @@ The designs were created to the following widths:
   --font-weight-400: 400; /*normal*/
   --font-weight-600: 600; /*semi-bold*/
 }
+
+/* General & Global styling */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -69,6 +71,8 @@ footer {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+/* Media queries */
 /* Responsive design for smaller screens */
 @media (max-width: 375px) and (max-height: 1360px) {
   body {
@@ -182,14 +186,14 @@ footer {
   }
 }
 
-/* Larger for screens 376px and larger */
+/* Desktop Larger for screens 376px and larger */
 @media (min-width: 376px) {
   .parent-container {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     padding: 1em;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas:
       "powered-by-tech powered-by-tech powered-by-tech powered-by-tech"
       "supervisor team-builder team-builder calculator"
@@ -215,6 +219,7 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-block-end: 2rem;
   }
   .powered-by-tech h1:first-of-type {
     font-weight: var(--font-weight-200);
@@ -264,23 +269,32 @@ footer {
     overflow: visible;
   }
 
+  .supervisor,
+  .calculator {
+    align-self: center;
+  }
+
   .supervisor {
     grid-area: supervisor;
     border-top: 3px solid var(--Cyan-color);
+    margin-inline-end: -6rem;
   }
   .team-builder {
     grid-area: team-builder;
     border-top: 3px solid var(--Red-color);
+    margin-block-end: 1rem;
   }
 
   .karma {
     grid-area: karma;
     border-top: 3px solid var(--Orange-color);
+    margin-block-start: 1rem;
   }
 
   .calculator {
     grid-area: calculator;
     border-top: 3px solid var(--Blue-color);
+    margin-inline-start: -6rem;
   }
 
   .supervisor svg,
