@@ -48,7 +48,6 @@ The designs were created to the following widths:
 }
 body {
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
   background: var(--Very-Light-Gray);
   color: var(--Very-Dark-Blue);
   display: flex;
@@ -58,12 +57,6 @@ body {
   min-height: 100vh;
 }
 
-/* .parent-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
-    gap: 1rem;
-    padding: 1em;
-} */
 footer {
   color: (var(--White));
   position: relative;
@@ -82,21 +75,17 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
   }
-  svg {
-    height: 57px;
-    width: 57px;
-  }
 
   .parent-container {
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(311px, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
     gap: 1rem;
     padding: 1em;
-    grid-template-columns: 1fr;
   }
 
   .powered-by-tech {
     width: 311px;
+    height: auto;
     border-radius: 0.5em;
     padding: 1em;
     display: flex;
@@ -106,63 +95,27 @@ footer {
     text-align: center;
   }
 
-  .powered-by-tech {
-    border: 1px solid red;
-  }
-
-  .powered-by-tech h1:first-of-type {
-    font-weight: var(--font-weight-200);
+  .powered-by-tech h1:first-of-type,
+  .powered-by-tech h1:last-of-type {
     font-size: 24px;
+    font-weight: var(--font-weight-200);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
   }
 
   .powered-by-tech h1:last-of-type {
     font-weight: var(--font-weight-600);
-    font-size: 24px;
     margin-block-end: 0.5em;
   }
 
   .powered-by-tech p {
+    font-size: 15px;
     line-height: 20px;
-  }
-
-  .powered-by-tech h1:first-of-type,
-  .powered-by-tech h1:last-of-type,
-  .supervisor h1,
-  .team-builder h1,
-  .karma h1,
-  .calculator h1 {
-    font-size: 20px;
-  }
-
-  .powered-by-tech p,
-  .supervisor p,
-  .team-builder p,
-  .karma p,
-  .calculator p {
-    font-weight: var(--font-weight-200); /*extra light font*/
-  }
-
-  .powered-by-tech,
-  .supervisor,
-  .team-builder,
-  .karma,
-  .calculator {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .supervisor h1,
-  .team-builder h1,
-  .karma h1,
-  .calculator h1 {
-    margin-bottom: 0.5em;
-  }
-
-  .supervisor p,
-  .team-builder p,
-  .karma p,
-  .calculator p {
-    font-size: 13px;
+    font-weight: var(--font-weight-200);
+    color: var(--Grayish-Blue);
   }
 
   .supervisor,
@@ -198,6 +151,23 @@ footer {
     border-top: 3px solid var(--Blue-color);
   }
 
+  .supervisor h1,
+  .team-builder h1,
+  .karma h1,
+  .calculator h1 {
+    font-size: 20px;
+    margin-bottom: 0.5em;
+  }
+
+  .supervisor p,
+  .team-builder p,
+  .karma p,
+  .calculator p {
+    font-size: 13px;
+    font-weight: var(--font-weight-200);
+    color: var(--Grayish-Blue);
+  }
+
   .supervisor svg,
   .team-builder svg,
   .karma svg,
@@ -207,6 +177,121 @@ footer {
     right: 2em;
     height: 57px;
     width: 57px;
+    pointer-events: none;
+    overflow: visible;
+  }
+}
+
+/* Larger for screens 376px and larger */
+@media (min-width: 376px) {
+  .parent-container {
+    display: grid;
+    gap: 1rem;
+    padding: 1em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "powered-by-tech powered-by-tech powered-by-tech powered-by-tech"
+      "supervisor team-builder team-builder calculator"
+      "supervisor karma karma calculator";
+    /* border: solid red 1px; */
+  }
+  .powered-by-tech,
+  .supervisor,
+  .team-builder,
+  .karma,
+  .calculator {
+    margin: 0 auto;
+  }
+
+  .powered-by-tech {
+    grid-area: powered-by-tech;
+    width: 540px;
+    height: 168px;
+    border-radius: 0.5em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .powered-by-tech h1:first-of-type {
+    font-weight: var(--font-weight-200);
+    font-size: 36px;
+  }
+  .powered-by-tech h1:last-of-type {
+    font-weight: var(--font-weight-600);
+    font-size: 36px;
+  }
+  .powered-by-tech p {
+    line-height: 25px;
+    font-size: 15px;
+    max-width: 400px;
+  }
+
+  .supervisor h1,
+  .team-builder h1,
+  .karma h1,
+  .calculator h1 {
+    font-size: 20px;
+    margin-bottom: 0.5em;
+  }
+
+  .powered-by-tech p,
+  .supervisor p,
+  .team-builder p,
+  .karma p,
+  .calculator p {
+    font-weight: var(--font-weight-200); /*extra light font*/
+    font-size: 13px;
+  }
+
+  .supervisor,
+  .team-builder,
+  .karma,
+  .calculator {
+    height: 250px;
+    width: 350px;
+    position: relative;
+    background: var(--White);
+    border-radius: 0.5em;
+    padding: 1em;
+    padding-bottom: 4em;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow: visible;
+  }
+
+  .supervisor {
+    grid-area: supervisor;
+    border-top: 3px solid var(--Cyan-color);
+  }
+  .team-builder {
+    grid-area: team-builder;
+    border-top: 3px solid var(--Red-color);
+  }
+
+  .karma {
+    grid-area: karma;
+    border-top: 3px solid var(--Orange-color);
+  }
+
+  .calculator {
+    grid-area: calculator;
+    border-top: 3px solid var(--Blue-color);
+  }
+
+  .supervisor svg,
+  .team-builder svg,
+  .karma svg,
+  .calculator svg {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    height: 64px;
+    width: 64px;
     pointer-events: none;
     overflow: visible;
   }
